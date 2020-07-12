@@ -5,7 +5,7 @@ export PIP_EXTRA_INDEX_URL="https://pypi.org/simple/"
 
 if [[ ${NODIS_NO_TESTS} != "True" ]] && [[ -f requirements.txt ]]; then
 
-    pip install -H -r requirements.txt --user
+    pip install -r requirements.txt
 
     if python -m coverage run --source='.' -m pytest; then
         echo "Ok"
