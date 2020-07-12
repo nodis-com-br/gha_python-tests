@@ -1,0 +1,5 @@
+name: 'python-tests'
+description: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
