@@ -3,7 +3,7 @@
 export PIP_INDEX_URL="https://${NODIS_PYPI_USER}:${NODIS_PYPI_PASSWORD}@${NODIS_PYPI_HOST}/simple"
 export PIP_EXTRA_INDEX_URL="https://pypi.org/simple/"
 
-if [[ ${NODIS_NO_TESTS} != "True" ]] && [[ -f requirements.txt ]]; then
+if [[ ${NODIS_SKIP_TESTS} != true ]] && [[ -f requirements.txt ]]; then
 
     pip install -r requirements.txt
 
@@ -13,8 +13,6 @@ if [[ ${NODIS_NO_TESTS} != "True" ]] && [[ -f requirements.txt ]]; then
         [[ $? -eq 5 ]] || exit $?
     fi
 
-    if ! python -m coverage xml; then
-       touch coverage.xml
-    fi
-
 fi
+
+python -m coverage xml || touch coverage.xml
