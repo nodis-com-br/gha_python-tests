@@ -16,5 +16,3 @@ if [[ ${NODIS_SKIP_TESTS} != true ]] && [[ -f requirements.txt ]]; then
 fi
 
 python -m coverage xml || touch coverage.xml
-
-ls -la

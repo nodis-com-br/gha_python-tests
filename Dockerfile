@@ -1,4 +1,4 @@
-FROM docker.io/nodisbr/python:3.7.3-0001
+FROM docker.io/nodisbr/python
 
 RUN pip install coverage pytest pytest-azurepipelines
 
